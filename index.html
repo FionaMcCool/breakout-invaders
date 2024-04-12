@@ -6,9 +6,10 @@
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
     <style type="text/css">
       body {
-        margin: 0;
+        margin: 0 auto;
+        text-align: center;
       }
-    </style>
+    </style> 
   </head>
   <body>
     <script type="text/javascript">
@@ -34,7 +35,7 @@
           // Enable world bounds, but disable the floor
           this.physics.world.setBoundsCollision(true, true, true, false);
 
-          // Create the aliens (formerly bricks) in a 10x3 grid that moves
+
           this.aliens = this.physics.add.group({
             key: "assets",
             frame: ["yellow1", "white1", "red1"],
@@ -59,7 +60,7 @@
 
           // Ensure the paddle is a physics object and immovable
           this.paddle = this.physics.add
-            .image(780, 500, "assets", "paddle")
+            .image(780, 600, "assets", "paddle")
             .setImmovable(true)
             .setCollideWorldBounds(true);
 
@@ -151,7 +152,7 @@
 
         resetBall() {
           this.ball.setVelocity(0);
-          this.ball.setPosition(this.paddle.x, 500);
+          this.ball.setPosition(this.paddle.x, 60);
           this.ball.setData("onPaddle", true);
         }
 

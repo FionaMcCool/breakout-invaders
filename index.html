@@ -53,16 +53,16 @@
           // Create lasers group
           this.lasers = this.physics.add.group();
 
-          // Create the ball with dynamic physics
-          this.ball = this.physics.add.image(136, 124, "assets", "ball").setCollideWorldBounds(true).setBounce(1, 1); // Ensure the ball bounces off world bounds and objects
-          this.ball.setData("onPaddle", true);
-          this.ball.setBounce(1, 1); // Perfectly elastic collision
-
           // Ensure the paddle is a physics object and immovable
           this.paddle = this.physics.add
             .image(780, 200, "assets", "paddle")
             .setImmovable(true)
             .setCollideWorldBounds(true);
+
+          // Create the ball with dynamic physics
+          this.ball = this.physics.add.image(136, 1124, "assets", "ball").setCollideWorldBounds(true).setBounce(1, 1); // Ensure the ball bounces off world bounds and objects
+          this.ball.setData("onPaddle", true);
+          this.ball.setBounce(1, 1); // Perfectly elastic collision
 
           // Our colliders
           // Set up collision between the ball and the aliens
